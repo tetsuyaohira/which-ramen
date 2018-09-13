@@ -23,7 +23,11 @@ function download_flickr($keyword, $dir)
 
     $result = $flickr->photos_search($search_opt);
 
-    var_dump($result);
+    if (!$result) die('Flickr API error');
+
+    foreach($result['photo'] as $photo) {
+        $farm = $photo['farm'];
+    }
 
 
 }
