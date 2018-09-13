@@ -27,6 +27,10 @@ function download_flickr($keyword, $dir)
 
     foreach($result['photo'] as $photo) {
         $farm = $photo['farm'];
+
+
+
+        
     }
 
 
