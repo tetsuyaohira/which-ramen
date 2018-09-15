@@ -25,13 +25,16 @@ function download_flickr($keyword, $dir)
 
     if (!$result) die('Flickr API error');
 
-    foreach($result['photo'] as $photo) {
+    foreach ($result['photo'] as $photo) {
         $farm = $photo['farm'];
-
-
-
-        
+        $server = $photo['server'];
+        $id = $photo['id'];
+        $secret = $photo['secret'];
+        $url = "http://farm{$farm}.staticflickr.com/{$server}/{$id}_{$secret}.jpg";
+        echo "get {$id} : {$url}\n";
+        $serverPath = "./$dir/$id.jpg";
+        if (file_exists($serverPath)) continue;
+        $bin = file_get_contents($url);
+        file_put_contents($serverPath, $bin);
     }
-
-
 }
