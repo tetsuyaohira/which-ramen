@@ -21,9 +21,9 @@ if (empty($_FILES['upfile']['tmp_name'])) {
     exit;
 }
 
-$upfile = dirname(__FILE__) . '/upfile.jpg';
-move_uploaded_file($_FILES['upfile']['tmp_name'], $upfile);
-$target = make_histogram($upfile, false);
+$upFile = dirname(__FILE__) . '/upfile.jpg';
+move_uploaded_file($_FILES['upfile']['tmp_name'], $upFile);
+$target = make_histogram($upFile, false);
 
 $ann = fann_create_from_file('ramen.net');
 $res = fann_run($ann, $target);
