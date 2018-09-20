@@ -10,7 +10,6 @@ $up_form = <<<EOS
 
     </form>
 </div>
-
 EOS;
 
 $head = '<html><meta charset="utf-8"><body>';
